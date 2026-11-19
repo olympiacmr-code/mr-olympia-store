@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#211b2b">
+<meta name="description" content="MR. OLYMPIA — Built To Stand Apart.">
+<title>MR. OLYMPIA | BUILT TO STAND APART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800;900&family=Cairo:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{--gold:#d9b978;--gold-light:#f5e4b9;--purple:#a78bfa;--blue:#69baff;--cyan:#66f0df;--pink:#ff83c9;--white:#f7f3ec;--ink:#211b2b}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Cairo,sans-serif;color:var(--white);background:#211b2b}
+body{--bgshift:0deg}
+body:before{content:"";position:fixed;inset:-30%;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 15% 20%,rgba(167,139,250,.48),transparent 28%),radial-gradient(ellipse at 82% 15%,rgba(102,240,223,.3),transparent 26%),radial-gradient(ellipse at 75% 85%,rgba(255,131,201,.3),transparent 28%),radial-gradient(ellipse at 25% 82%,rgba(217,185,120,.27),transparent 25%),linear-gradient(125deg,#241c31,#43314b 48%,#1b3546);animation:aurora 30s ease-in-out infinite alternate}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;background-image:radial-gradient(rgba(255,255,255,.8) .7px,transparent .9px);background-size:37px 37px}
+@keyframes aurora{to{transform:translate(1%,-1%) scale(1.035)}}
+@keyframes logoFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
+@keyframes logoGlow{0%,100%{text-shadow:0 0 12px rgba(217,185,120,.25),0 0 28px rgba(167,139,250,.18)}50%{text-shadow:0 0 20px rgba(217,185,120,.75),0 0 45px rgba(105,186,255,.4)}}
+@keyframes rgb{to{background-position:300% 0}}
+@keyframes vinylSpin{to{transform:rotate(360deg)}}
+@keyframes shimmer{0%{transform:translateX(-150%) skewX(-18deg)}100%{transform:translateX(250%) skewX(-18deg)}}
+@keyframes pageIn{from{opacity:.2;transform:translateX(36px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes introReveal{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+.glass{background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.055) 48%,rgba(255,255,255,.13));border:1px solid rgba(255,255,255,.28);box-shadow:0 22px 65px rgba(8,4,18,.27),inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(255,255,255,.08);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);position:relative;overflow:hidden}
+.glass:after{content:"";position:absolute;top:-60%;bottom:-60%;left:-55%;width:26%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);animation:shimmer 11s ease-in-out infinite}
+.rgb-frame{position:relative;isolation:isolate}
+.rgb-frame:before{content:"";position:absolute;inset:-2px;border-radius:inherit;z-index:-1;background:linear-gradient(110deg,var(--purple),var(--blue),var(--cyan),var(--pink),var(--gold),var(--purple));background-size:300% 300%;animation:rgb 8s linear infinite;filter:blur(6px);opacity:.78}
+#rotateNotice{display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;text-align:center;padding:20px;background:linear-gradient(135deg,#2b2039,#173747)}
+.rotate-card{padding:30px;border-radius:28px;max-width:390px}.rotate-card b{font-size:20px}.rotate-card p{color:#ddd}
+#intro{position:fixed;inset:0;z-index:5000;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;background:radial-gradient(circle at 50% 48%,rgba(217,185,120,.24),transparent 35%),linear-gradient(130deg,#251d32,#46314b 55%,#183747);transition:opacity .7s,visibility .7s}
+#intro.hide{opacity:0;visibility:hidden}
+.intro-card{padding:clamp(30px,5vw,58px);border-radius:34px;animation:introReveal .9s ease both;max-width:760px}
+.intro-kicker{font:700 10px Montserrat;letter-spacing:.42em;color:var(--gold-light)}
+.intro-title{font:900 clamp(34px,7vw,76px)/1.04 Montserrat;letter-spacing:.04em;color:var(--gold-light);margin:17px 0;animation:logoGlow 4s infinite}
+.intro-line{font-size:clamp(13px,1.5vw,17px);letter-spacing:.12em;color:#fff}
+.skip{margin-top:28px;padding:10px 25px;border-radius:25px;border:1px solid #ffffff66;background:#ffffff18;color:white;cursor:pointer;font:600 12px Cairo}
+#app{height:100dvh;width:100vw;display:grid;grid-template-columns:190px minmax(0,1fr);grid-template-rows:74px minmax(0,1fr) 32px;opacity:0;transition:opacity .6s;direction:rtl}
+#app.ready{opacity:1}
+.topbar{height:60px;grid-column:1/-1;grid-row:1;margin:7px 10px 5px;padding:0 18px;border-radius:22px;display:flex;align-items:center;justify-content:space-between;gap:15px;z-index:30}
+.brand{font:900 17px Montserrat;letter-spacing:.1em;color:var(--gold-light);white-space:nowrap}
+.brand small{display:block;font:600 8px Montserrat;letter-spacing:.3em;color:#fff;margin-top:4px}
+.nav{grid-column:1;grid-row:2;display:flex;flex-direction:column;gap:8px;overflow:auto;scrollbar-width:none;margin:7px 8px 10px;padding:12px 9px;border:1px solid #ffffff2b;border-radius:22px;background:linear-gradient(145deg,#ffffff18,#ffffff08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}.nav button{width:100%;text-align:right;white-space:normal;border:1px solid transparent;border-radius:14px;background:transparent;color:#fff;padding:12px 13px;font:700 12px Cairo;cursor:pointer;transition:.25s}
+.nav button.active,.nav button:hover{background:#ffffff20;border-color:#ffffff38;box-shadow:0 0 18px #a78bfa50}
+.top-actions{display:flex;gap:7px}.icon-btn{border:1px solid #ffffff35;border-radius:14px;background:#ffffff16;color:white;padding:8px 12px;cursor:pointer}
+#pages{grid-column:2;grid-row:2;min-width:0;min-height:0;display:block;overflow:hidden;direction:rtl}
+.page{display:none;width:100%;height:100%;padding:9px 12px 16px;justify-content:center;overflow:auto;animation:pageIn .38s ease both}
+.page.active{display:flex}
+.page-inner{width:min(1500px,100%);height:100%;padding:clamp(17px,2.8vw,35px);border-radius:30px;display:flex;flex-direction:column;min-height:0;animation:pageIn .65s cubic-bezier(.2,.8,.2,1) both}
+.page-heading{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:17px;position:relative;z-index:1}
+.eyebrow{font:700 10px Montserrat;letter-spacing:.3em;color:var(--gold-light)}
+.page-heading h2{font-size:clamp(23px,3vw,40px);margin:5px 0 0;line-height:1.2}
+.muted{font-size:12px;color:#ffffffb8}
+.animated-brand{font:900 clamp(24px,4vw,52px) Montserrat;letter-spacing:.09em;color:var(--gold-light);animation:logoFloat 5s ease-in-out infinite,logoGlow 4s ease-in-out infinite;text-shadow:0 0 25px #d9b97855}
+.animated-brand small{display:block;font:600 8px Montserrat;letter-spacing:.42em;color:#fff;text-align:center;margin-top:9px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:25px;align-items:center;height:100%}
+.hero-copy{max-width:690px;position:relative;z-index:1}
+.hero-title{font:900 clamp(34px,6vw,78px)/1 Montserrat;letter-spacing:-.04em;margin:14px 0 18px}.hero-title span{color:var(--gold-light)}
+.hero-copy p{font-size:clamp(13px,1.3vw,17px);line-height:1.9;color:#ffffffd4;max-width:570px}
+.cta-row{display:flex;gap:11px;flex-wrap:wrap;margin-top:23px}
+.cta{border:1px solid #ffffff55;padding:11px 21px;border-radius:17px;color:white;background:#ffffff1c;font:700 12px Cairo;cursor:pointer;backdrop-filter:blur(12px);transition:.25s}
+.cta.primary{background:linear-gradient(110deg,#e0c48c,#b49bdc);color:#241c2c;border-color:#ffffff88}
+.cta:hover{transform:translateY(-3px);box-shadow:0 0 23px #66f0df55}
+.hero-art{height:min(62vh,480px);min-height:230px;border-radius:34px;display:grid;place-items:center;background:radial-gradient(circle,#d9b97836,transparent 48%),linear-gradient(145deg,#ffffff20,#ffffff06)}
+.hero-logo{text-align:center;position:relative;z-index:1;animation:logoFloat 5s ease-in-out infinite}
+.hero-logo .animated-brand{font-size:clamp(29px,5vw,64px)}
+.hero-logo p{font:600 9px Montserrat;letter-spacing:.35em;color:#fff;margin-top:14px}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;overflow:auto;padding:5px 4px 12px}
+.tile{min-height:190px;border-radius:24px;padding:19px;display:flex;flex-direction:column;justify-content:end;cursor:pointer;transition:.25s;background:linear-gradient(145deg,#a78bfa40,#ffffff0e),radial-gradient(circle at 80% 12%,#66f0df40,transparent 40%)}
+.tile:nth-child(2){background:linear-gradient(145deg,#d9b97842,#ffffff0e)}.tile:nth-child(3){background:linear-gradient(145deg,#69baff45,#ffffff0e)}.tile:nth-child(4){background:linear-gradient(145deg,#ff83c940,#ffffff0e)}
+.tile:hover{transform:translateY(-5px);box-shadow:0 0 25px #a78bfa50}
+.tile .num{font:800 11px Montserrat;color:var(--gold-light);margin-bottom:auto}.tile h3{font-size:22px;margin:22px 0 4px}.tile p{font-size:11px;color:#ffffffb8;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;height:100%}
+.about-copy{padding:clamp(20px,4vw,45px);border-radius:27px}.about-copy h2{font-size:clamp(26px,4vw,45px);line-height:1.25}.about-copy p{font-size:13px;line-height:2;color:#ffffffc7}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{padding:25px 12px;border-radius:22px;text-align:center}.stat strong{font:800 27px Montserrat;color:var(--gold-light);display:block}.stat span{font-size:11px;color:#ffffffbd}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1;min-height:0}
+.contact-card{padding:23px;border-radius:25px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}.field label{font-size:11px;color:#ffffffc9}.field input,.field textarea{width:100%;border:1px solid #ffffff38;background:#ffffff17;color:white;border-radius:13px;padding:10px 12px;font:12px Cairo;outline:none}.field textarea{min-height:75px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:#ffffff80}
+.music-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;height:100%}
+.music-copy h2{font-size:clamp(28px,4vw,47px);margin:8px 0}.music-copy p{line-height:1.9;color:#ffffffc7;font-size:13px;max-width:480px}
+.turntable{width:min(420px,65vw);aspect-ratio:1.08;border-radius:38px;padding:17px;justify-self:center;display:grid;place-items:center;position:relative;background:linear-gradient(135deg,#ffffff35,#ffffff0b);box-shadow:0 25px 80px #09051255,inset 0 1px 0 #ffffff99,0 0 36px #a78bfa55}
+.turntable:before{content:"";position:absolute;inset:-3px;border-radius:41px;background:linear-gradient(110deg,var(--purple),var(--blue),var(--cyan),var(--pink),var(--gold),var(--purple));background-size:300% 300%;animation:rgb 7s linear infinite;filter:blur(12px);z-index:-1}
+.turntable:after{content:"";position:absolute;inset:8px;border:1px solid #ffffff55;border-radius:30px;pointer-events:none}
+.turn-reflect{position:absolute;inset:0;border-radius:38px;background:linear-gradient(130deg,#ffffff38,transparent 28%,transparent 70%,#ffffff15);pointer-events:none}
+.vinyl-stage{width:76%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#ffffff25,transparent 66%);box-shadow:0 0 35px #66f0df55}
+.vinyl{width:88%;aspect-ratio:1;border-radius:50%;position:relative;background:repeating-radial-gradient(circle,#17151d 0 2px,#302b38 3px 4px,#111015 5px 7px);border:5px solid #37313d;box-shadow:0 0 0 2px #ffffff2b,0 0 24px #a78bfa55,inset 0 0 24px #000;animation:vinylSpin 3s linear infinite;animation-play-state:paused}
+.vinyl.playing{animation-play-state:running}
+.vinyl:before{content:"";position:absolute;inset:12%;border-radius:50%;border:1px solid #ffffff30;box-shadow:0 0 0 7px #ffffff08,0 0 0 15px #ffffff0b}
+.vinyl-label{position:absolute;inset:34%;border-radius:50%;background:radial-gradient(circle at 35% 25%,#f5e4b9,#b58d4e 65%,#72512e);display:grid;place-items:center;text-align:center;color:#251b20;border:3px solid #ffffff66;font:900 clamp(7px,1vw,11px) Montserrat;letter-spacing:.06em;line-height:1.3;box-shadow:0 0 20px #d9b97899}
+.vinyl-label small{font-size:5px;letter-spacing:.18em}.tonearm{position:absolute;width:27%;height:5px;background:linear-gradient(90deg,#f2eee8,#777b8d);right:8%;top:22%;border-radius:9px;transform:rotate(38deg);transform-origin:right center;z-index:2;box-shadow:0 0 10px #fff8}.tonearm:before{content:"";position:absolute;right:-5px;top:-6px;width:17px;height:17px;border:3px solid #e9e4dc;border-radius:50%;background:#60566b}
+.player-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;position:relative;z-index:4}.play-btn{width:46px;height:46px;border-radius:50%;border:1px solid #ffffff80;background:linear-gradient(135deg,#e3c68d,#b69be0);color:#241c2c;font-size:18px;cursor:pointer;box-shadow:0 0 22px #a78bfa77}.volume{width:95px;accent-color:var(--gold)}.player-caption{text-align:center;font:600 9px Montserrat;letter-spacing:.2em;color:#ffffffbd;margin-top:8px}
+#productsPage .page-inner{background:linear-gradient(135deg,#e1e1e4,#bfc1c8 55%,#e8e8eb);border:1px solid #ffffffc9;box-shadow:0 20px 65px #07070b44,inset 0 1px 0 white;color:#282832}
+#productsPage .eyebrow{color:#79613a}#productsPage .page-heading h2{color:#24242d}#productsPage .muted{color:#565660}
+.products-tools{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.products-tools input,.products-tools select{background:#ffffffa8;border:1px solid #ffffffd9;border-radius:13px;padding:9px 12px;color:#292832;font:12px Cairo;outline:none}
+.products-tools input{min-width:180px}
+#productsGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;overflow:auto;min-height:0;flex:1;align-content:start;padding:5px 4px 12px;scrollbar-width:thin}
+.product-card{border-radius:22px;padding:11px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;background:linear-gradient(135deg,#ffffffb9,#ffffff5c 55%,#e5e5ebaa);border:1px solid #ffffffed;box-shadow:0 13px 30px #34344324,inset 0 1px 0 white;backdrop-filter:blur(18px);transition:.25s;position:relative;overflow:hidden}
+.product-card:before{content:"";position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(120deg,#a78bfa99,#69baff99,#66f0df99,#ff83c999);opacity:.35;filter:blur(9px);z-index:-1}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 17px 35px #34344340,0 0 16px #a78bfa77}
+.product-photo{height:clamp(95px,18vh,165px);border-radius:15px;background:linear-gradient(135deg,#d4d5db,#f6f6f8);display:grid;place-items:center;overflow:hidden}
+.product-photo img{width:100%;height:100%;object-fit:contain}.placeholder{font:800 16px Montserrat;color:#8b8b95;letter-spacing:.1em}
+.product-meta{padding:8px 3px 0}.product-meta h3{font-size:13px;color:#292832;margin:0 0 3px}.product-meta p{font-size:10px;color:#686873;margin:0}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-top:8px}.price{font:800 13px Montserrat;color:#72552a}.small-btn{border:1px solid #a5a5b1;background:#ffffffb8;color:#33333e;border-radius:11px;padding:6px 10px;font:700 10px Cairo;cursor:pointer}
+.empty{grid-column:1/-1;text-align:center;padding:30px;color:#565660}
+#cartDrawer,#productModal{position:fixed;inset:0;z-index:2000;background:#09061199;backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:16px}
+.modal-card{width:min(650px,95vw);max-height:88dvh;overflow:auto;border-radius:27px;padding:23px;color:white}
+.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.close{border:1px solid #ffffff45;background:#ffffff1a;color:white;border-radius:50%;width:34px;height:34px;cursor:pointer}
+#cartItems{margin:16px 0;display:grid;gap:9px}.cart-line{display:flex;justify-content:space-between;gap:10px;padding:11px;border-radius:14px;background:#ffffff12}
+.modal-product{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:14px}.modal-product img{width:100%;max-height:280px;object-fit:contain;border-radius:17px;background:#ffffff12}.modal-product p{font-size:12px;line-height:1.8;color:#ffffffc7}.modal-product select,.modal-product input{background:#ffffff18;border:1px solid #ffffff45;border-radius:11px;color:white;padding:8px}
+
+/* Product details additions — retain the original store theme */
+.product-detail-layout{display:flex;flex-direction:column;gap:12px;margin-top:15px}
+.detail-visual{min-width:0}.detail-visual img{width:100%;max-height:300px;object-fit:contain;border-radius:18px;background:#ffffff10}
+.detail-photo-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:12px}.detail-photo-item{min-width:0;padding:7px;border:1px solid #ffffff30;border-radius:13px;background:#ffffff0c}.detail-photo-item img{display:block;width:100%;height:125px;object-fit:contain;border-radius:9px;background:#ffffff10}.detail-photo-item span{display:block;text-align:center;font-size:11px;margin-top:5px;color:#ffffffd9}@media(max-width:560px){.detail-photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-photo-item img{height:112px}}
+.detail-glass{margin-top:12px;padding:14px;border:1px solid #ffffffbd;border-radius:18px;background:rgba(255,255,255,.13);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:white;box-shadow:0 10px 28px #0002}
+.detail-glass h4,.detail-section h4{margin:0 0 10px;font-size:14px}.detail-glass img{width:100%;max-height:155px;object-fit:contain;border-radius:12px;background:#ffffff0d}
+.fabric-specs{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.fabric-spec{padding:10px;border-radius:12px;background:#ffffff16;text-align:center}.fabric-spec small{display:block;color:#ffffffb9;font-size:10px}.fabric-spec strong{display:block;font-size:15px;margin-top:4px}
+.detail-section{margin-top:0;padding:14px;border:1px solid #ffffff35;border-radius:18px;background:#ffffff0d;color:#fff}.detail-section p{font-size:12px;line-height:1.9;color:#ffffffc9;margin:5px 0}
+#detailColors{display:flex;gap:9px;flex-wrap:wrap;margin:7px 0 13px}.detail-color{width:25px;height:25px;border-radius:50%;border:2px solid #ffffffbd;box-shadow:0 2px 8px #0003;display:inline-block}
+
+#toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;z-index:4000;background:#211b2beF;border:1px solid #ffffff45;padding:10px 18px;border-radius:20px;transition:.3s;font-size:12px;pointer-events:none}#toast.show{opacity:1;transform:translate(-50%,0)}
+.footer{height:32px;grid-column:1/-1;grid-row:3;display:flex;align-items:center;justify-content:space-between;padding:0 18px;color:#ffffffa8;font:600 9px Montserrat;letter-spacing:.12em}.dots{display:flex;gap:5px;direction:ltr}.dots button{width:6px;height:6px;border:0;border-radius:8px;background:#ffffff55;padding:0;cursor:pointer}.dots button.active{width:20px;background:var(--gold-light)}
+@media(max-width:850px){.topbar{margin:7px 9px 5px;height:56px;padding:0 11px}.brand{font-size:13px}.nav{gap:1px}.nav button{padding:6px 8px;font-size:10px}.page{padding:7px 9px 10px}.page-inner{padding:15px;border-radius:23px}.hero{gap:12px}.hero-art{height:52vh}.tiles{grid-template-columns:repeat(4,minmax(160px,1fr))}#productsGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.footer{padding:0 12px}}
+@media(max-width:560px){.hero{grid-template-columns:1fr}.hero-art{display:none}.about-grid,.contact-grid,.music-layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}#productsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.product-card{min-height:190px}.turntable{width:min(300px,62vw)}.music-copy{display:none}.page-heading{margin-bottom:10px}.page-heading h2{font-size:22px}}
+
+/* Mobile 
